@@ -2,11 +2,11 @@
   .User-name
     .User-name__Top-items
       .User-name__Top-items--Name
-        masa 
+        = current_user.name
       .User-name__Top-items--Icons
         =link_to "#", class: "User-name__Top-items--Icons--Edit" do
           =icon('far','edit')
-        =link_to "#", class: "User-name__Top-items--Icons--Cog" do
+        =link_to edit_user_path(current_user), class: "User-name__Top-items--Icons--Cog" do
           =icon('fas','cog')
   .Group-list
     .Group-list--Group
