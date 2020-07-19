@@ -1,0 +1,52 @@
+.Chat-main
+  .RightHeader
+    .RightHeader__Group
+      .RightHeader__GroupName
+        test
+      %ul.RightHeader__MemberList
+        Member：
+        %li.RightHeader__Memder
+          masa
+    =link_to "#" ,class: "RightHeader__EditButton" do
+      Edit
+  .MessageFiled
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__UserName
+          masa
+        .MessageInfo__Date
+          2020年07月14日 22時47分
+      .Message
+        test
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__UserName
+          masa
+        .MessageInfo__Date
+          2020年07月14日 22時47分
+      .Message
+        test
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__UserName
+          masa
+        .MessageInfo__Date
+          2020年07月14日 22時47分
+      .Message
+        test
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__UserName
+          masa
+        .MessageInfo__Date
+          2020年07月14日 22時47分
+      .Message
+        test
+  .Footer
+    .Form
+      .Form__Contents
+        %input{ class:"Form__Content" ,type:"text" ,placeholder:"type a message"}
+        %label{class: "Form__Image"}
+          = icon('far', 'image')
+          %input{ class:"Hidden", type: "file"}
+      %input{ class:"Form__Submit",type:"submit",value:"send"}
