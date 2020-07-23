@@ -4,14 +4,15 @@
       .User-name__Top-items--Name
         = current_user.name
       .User-name__Top-items--Icons
-        =link_to "#", class: "User-name__Top-items--Icons--Edit" do
+        =link_to new_group_path(current_user), class: "User-name__Top-items--Icons--Edit" do
           =icon('far','edit')
         =link_to edit_user_path(current_user), class: "User-name__Top-items--Icons--Cog" do
           =icon('fas','cog')
   .Group-list
-    .Group-list--Group
-      = link_to "#" do
-        .Group-list--Group--Group-name
-          techcamp
-        .Group-list--Group--Group-message
-          まだメッセージがありません 
+    - current_user.groups.each do |group|
+      .Group-list--Group
+        = link_to "#" do
+          .Group-list--Group--Group-name
+            = group.name
+          .Group-list--Group--Group-message
+            まだメッセージがありません 
