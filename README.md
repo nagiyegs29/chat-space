@@ -49,7 +49,7 @@ Things you may want to cover:
 
 |Column|type|options|
 |------|----|-------|
-|body|text|
+|content|text|
 |image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|

@@ -2,51 +2,21 @@
   .RightHeader
     .RightHeader__Group
       .RightHeader__GroupName
-        test
+        = @group.name
       %ul.RightHeader__MemberList
         Member：
         %li.RightHeader__Memder
-          masa
-    =link_to "#" ,class: "RightHeader__EditButton" do
+          - @users.each do |user|
+            =user.name
+    =link_to edit_group_path(@group) ,class: "RightHeader__EditButton" do
       Edit
   .MessageFiled
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__UserName
-          masa
-        .MessageInfo__Date
-          2020年07月14日 22時47分
-      .Message
-        test
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__UserName
-          masa
-        .MessageInfo__Date
-          2020年07月14日 22時47分
-      .Message
-        test
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__UserName
-          masa
-        .MessageInfo__Date
-          2020年07月14日 22時47分
-      .Message
-        test
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__UserName
-          masa
-        .MessageInfo__Date
-          2020年07月14日 22時47分
-      .Message
-        test
+    = render @messages
   .Footer
-    .Form
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__Contents
-        %input{ class:"Form__Content" ,type:"text" ,placeholder:"type a message"}
-        %label{class: "Form__Image"}
-          = icon('far', 'image')
-          %input{ class:"Hidden", type: "file"}
-      %input{ class:"Form__Submit",type:"submit",value:"send"}
+        = f.text_field :content, class: 'Form__Content', placeholder: 'type a message'
+        = f.label :image, class: 'Form__Image' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__Submit'
