@@ -10,7 +10,7 @@
             =user.name
     =link_to edit_group_path(@group) ,class: "RightHeader__EditButton" do
       Edit
-  .MessageFiled
+  .MessageField
     = render @messages
   .Footer
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
