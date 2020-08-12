@@ -6,7 +6,7 @@
       %ul.RightHeader__MemberList
         Member：
         %li.RightHeader__Memder
-          - @users.each do |user|
+          - @group.users.each do |user|
             =user.name
     =link_to edit_group_path(@group) ,class: "RightHeader__EditButton" do
       Edit
